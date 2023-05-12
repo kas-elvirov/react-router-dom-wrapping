@@ -33,9 +33,9 @@ const incomingRoutes: IIncomingRoute[] = [
             title: 'first-first-first',
             fieldToOmit1: 'fieldToOmit1',
             fieldToOmit2: 'fieldToOmit2',
-          }
+          },
         ],
-      }
+      },
     ],
   },
   {
@@ -52,9 +52,9 @@ const incomingRoutes: IIncomingRoute[] = [
             title: 'second-first-first',
             fieldToOmit1: 'fieldToOmit1',
             fieldToOmit2: 'fieldToOmit2',
-          }
+          },
         ],
-      }
+      },
     ],
   },
 ];
@@ -68,9 +68,9 @@ const outcomingRoutes: OutcomingRoute[] = [
         children: [
           {
             title: 'first-first-first',
-          }
+          },
         ],
-      }
+      },
     ],
   },
   {
@@ -81,9 +81,9 @@ const outcomingRoutes: OutcomingRoute[] = [
         children: [
           {
             title: 'second-first-first',
-          }
+          },
         ],
-      }
+      },
     ],
   },
 ];
