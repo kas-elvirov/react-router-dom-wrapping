@@ -1,0 +1,108 @@
+{
+  "name": "react-router-dom-wrapping",
+  "version": "1.0.1",
+  "description": "Custom route wrapping functionality for react-router-dom",
+  "license": "MIT",
+  "homepage": "https://github.com/kas-elvirov/react-router-dom-wrapping#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kas-elvirov/react-router-dom-wrapping.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kas-elvirov/react-router-dom-wrapping/issues"
+  },
+  "keywords": [
+    "react",
+    "decoration",
+    "react-router-dom",
+    "router",
+    "route",
+    "routing",
+    "history"
+  ],
+  "publishConfig": {
+    "registry-github": "https://npm.pkg.github.com/@kas-elvirov",
+    "registry-npm": "https://registry.npmjs.org/"
+  },
+  "authors": [
+    "Kas Elvirov <kas.elvirov@gmail.com> (https://github.com/kas-elvirov)"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn version-patch:up",
+      "pre-push": "yarn test"
+    }
+  },
+  "main": "dist/react-router-dom-wrapping.js",
+  "module": "dist/react-router-dom-wrapping.mjs",
+  "typings": "dist/react-router-dom-wrapping.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "types"
+  ],
+  "npmName": "react-router-dom-wrapping",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist es coverage types",
+    "lint": "eslint -c .eslintrc.js --ext js,jsx,ts,tsx ./src",
+    "check-types": "tsc --noEmit",
+    "test": "jest",
+    "test:w": "jest --watchAll",
+    "build-types": "tsc --emitDeclarationOnly --declaration",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "precommit": "npm run test && npm run version-patch:up",
+    "pretest": "npm run build",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run clean && npm run check-types && npm run lint && npm test",
+    "--- VERSIONING ---": "",
+    "version-patch:up": "npm version patch --no-git-tag-version --force && git add package.json package-lock.json",
+    "version-minor:up": "npm version minor --no-git-tag-version --force && git add package.json package-lock.json",
+    "version-major:up": "npm version major --no-git-tag-version --force && git add package.json package-lock.json"
+  },
+  "dependencies": {
+    "@types/lodash.omit": "4.5.7",
+    "lodash.omit": "4.5.0"
+  },
+  "devDependencies": {
+    "@types/expect": "^24.3.0",
+    "@types/jest-each": "^24.3.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "esbuild": "^0.17.5",
+    "eslint": "7.26.0",
+    "husky": "^8.0.1",
+    "is-positive-array": "^1.0.12",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.17.2",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "ts-jest": "^26.5.6",
+    "tslint": "^6.1.3",
+    "@types/jest": "26.0.4",
+    "@types/react": "17.0.5",
+    "@types/react-dom": "17.0.5",
+    "babel-minify": "0.5.1",
+    "expect": "26.6.2",
+    "jest": "26.6.3",
+    "jest-each": "26.6.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "typescript": "4.2.4"
+  }
+}
