@@ -1,6 +1,6 @@
 {
   "name": "react-router-dom-wrapping",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom route wrapping functionality for react-router-dom",
   "license": "MIT",
   "homepage": "https://github.com/kas-elvirov/react-router-dom-wrapping#readme",
@@ -67,7 +67,7 @@
     "version-minor:up": "npm version minor --no-git-tag-version --force && git add package.json package-lock.json",
     "version-major:up": "npm version major --no-git-tag-version --force && git add package.json package-lock.json",
     "=== PRECOMMIT ===": "",
-    "pre-commit": "npm run prettier-fix && git add src && npm run test && npm run version-patch:up",
+    "pre-commit": "npm run prettier-fix && git add src dist && npm run test && npm run version-patch:up",
     "prettier-fix": "prettier --ignore-path ./.prettierignore --write src",
     "prepare": "husky install"
   },
