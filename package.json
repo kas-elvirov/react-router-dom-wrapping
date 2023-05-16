@@ -1,6 +1,6 @@
 {
   "name": "react-router-dom-wrapping",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom route wrapping functionality for react-router-dom",
   "license": "MIT",
   "homepage": "https://github.com/kas-elvirov/react-router-dom-wrapping#readme",
@@ -67,21 +67,20 @@
     "version-minor:up": "npm version minor --no-git-tag-version --force && git add package.json package-lock.json",
     "version-major:up": "npm version major --no-git-tag-version --force && git add package.json package-lock.json",
     "=== PRECOMMIT ===": "",
-    "pre-commit": "npm run prettier-fix && git add src dist && npm run test && npm run version-patch:up",
+    "pre-commit": "npm run prettier-fix && git add src dist && npm run test && npm run lint && npm run version-patch:up",
     "prettier-fix": "prettier --ignore-path ./.prettierignore --write src",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/lodash.omit": "4.5.7",
-    "lodash.omit": "4.5.0",
-    "prettier": "^2.5.1"
+    "lodash.omit": "4.5.0"
   },
   "devDependencies": {
+    "@types/lodash.omit": "4.5.7",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/expect": "^24.3.0",
     "@types/jest": "26.0.4",
     "@types/jest-each": "^24.3.0",
@@ -99,6 +98,7 @@
     "is-positive-array": "^1.0.12",
     "jest": "26.6.3",
     "jest-each": "26.6.2",
+    "prettier": "^2.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rimraf": "^3.0.2",
