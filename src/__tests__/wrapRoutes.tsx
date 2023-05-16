@@ -1,10 +1,9 @@
 import * as React from 'react';
 
+import expect from 'expect';
 import each from 'jest-each';
 
-import expect from 'expect';
-
-import { wrapRoutes, IReactDomRoutesWrapperConfig } from '../index';
+import { IReactDomRoutesWrapperConfig, wrapRoutes } from '../index';
 
 interface IIncomingRoute {
   fieldToOmit1: string;
@@ -90,39 +89,29 @@ const outcomingRoutes: OutcomingRoute[] = [
 
 const successfulConfig: IReactDomRoutesWrapperConfig<IIncomingRoute> = {
   routes: incomingRoutes,
-  fieldsToOmit: [
-    'fieldToOmit1',
-    'fieldToOmit2',
-  ],
-  wrapRoute: (props) => <div>{props.route.title}</div>,
+  fieldsToOmit: ['fieldToOmit1', 'fieldToOmit2'],
+  wrapRoute: props => <div>{props.route.title}</div>,
 };
 
 const emptyConfig: IReactDomRoutesWrapperConfig<IIncomingRoute> = {
   routes: [],
-  fieldsToOmit: [
-    'fieldToOmit1',
-    'fieldToOmit2',
-  ],
-  wrapRoute: (props) => <div>{props.route.title}</div>,
+  fieldsToOmit: ['fieldToOmit1', 'fieldToOmit2'],
+  wrapRoute: props => <div>{props.route.title}</div>,
 };
 
 const mocks: [string, IReactDomRoutesWrapperConfig<IIncomingRoute>, OutcomingRoute[]][] = [
-  [
-    'successful state',
-    successfulConfig,
-    outcomingRoutes,
-  ],
-  [
-    'empty state',
-    emptyConfig,
-    [],
-  ],
+  ['successful state', successfulConfig, outcomingRoutes],
+  ['empty state', emptyConfig, []],
 ];
 
 describe('wrapRoutes states', () => {
   each(mocks).test(
     '%s',
-    (_: string, input: IReactDomRoutesWrapperConfig<IIncomingRoute>, expected: OutcomingRoute[]) => {
+    (
+      _: string,
+      input: IReactDomRoutesWrapperConfig<IIncomingRoute>,
+      expected: OutcomingRoute[],
+    ) => {
       expect(wrapRoutes<IIncomingRoute, OutcomingRoute>(input)).toMatchObject(expected);
     },
   );

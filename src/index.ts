@@ -48,13 +48,13 @@ export const wrapReactDomRoute = <
        */
       children: route.children?.length
         ? // 1 - map them if so
-        wrapRoutes<IncomingRoute, OutcomingRoute>({
-          routes: route.children,
-          fieldsToOmit,
-          wrapRoute,
-        })
+          wrapRoutes<IncomingRoute, OutcomingRoute>({
+            routes: route.children,
+            fieldsToOmit,
+            wrapRoute,
+          })
         : // 2 - unset field otherwise
-        undefined,
+          undefined,
     },
     fieldsToOmit,
 
