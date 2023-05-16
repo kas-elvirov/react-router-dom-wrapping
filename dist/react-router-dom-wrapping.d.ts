@@ -8,7 +8,7 @@ interface IReactDomRoutesWrapperConfig<IncomingRoute extends {
     children?: IncomingRoute[];
 }> {
     routes: IncomingRoute[];
-    fieldsToOmit: (keyof IncomingRoute)[];
+    fieldsToOmit?: (keyof IncomingRoute)[];
     wrapRoute: (props: IRouteWrapperProps<IncomingRoute>) => React.ReactNode;
 }
 /**
