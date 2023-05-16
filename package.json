@@ -1,6 +1,6 @@
 {
   "name": "react-router-dom-wrapping",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Custom route wrapping functionality for react-router-dom",
   "license": "MIT",
   "homepage": "https://github.com/kas-elvirov/react-router-dom-wrapping#readme",

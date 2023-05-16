@@ -14,7 +14,7 @@ export interface IReactDomRoutesWrapperConfig<
   routes: IncomingRoute[];
 
   // which fields to remove from incoming route
-  fieldsToOmit: (keyof IncomingRoute)[];
+  fieldsToOmit?: (keyof IncomingRoute)[];
 
   // route wrapper
   wrapRoute: (props: IRouteWrapperProps<IncomingRoute>) => React.ReactNode;
@@ -56,7 +56,7 @@ export const wrapReactDomRoute = <
         : // 2 - unset field otherwise
           undefined,
     },
-    fieldsToOmit,
+    fieldsToOmit || [],
 
     /**
      * Because there is no other way to infer the type. But I feel like I just don't know.
